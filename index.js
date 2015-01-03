@@ -317,6 +317,24 @@ NyaaTorrents.prototype.search = function search(term, options, cb) {
       obj.downloads = parseInt($(row).find(".tlistdn").text().trim(), 10);
       obj.comments = parseInt($(row).find(".tlistmn").text().trim(), 10);
 
+      // try and get some information about the resolution
+      // start by setting up some regex to match
+      var re1080 = /1080/;
+      var re720 = /720/;
+      var re480 = /480/;
+      var nameStr = String(obj.name);
+      if (re1080.test(nameStr)) {
+        obj.resolution = 1080
+      } else if (re720.test(nameStr)) {
+        obj.resolution = 720
+      } else if (re480.test(nameStr)) {
+        obj.resolution = 480
+      } else {
+        obj.resolution = null
+      }
+
+      obj.HD = obj.resolution >= 720;
+
       return obj;
     }).filter(function(e) {
       return e !== null;
