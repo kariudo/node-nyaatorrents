@@ -10,7 +10,14 @@ This is a light abstraction of the search and view functions of NyaaTorrents
 (nyaa.eu, formerly nyaatorrents.info and nyaatorrents.org). It can currently
 search the main site and the sukebei variant.
 
-Now supports simpler formatting.
+New Features
+------------
+* Simpler searching with natural language style filters.
+* Detect sub group based on tag
+* Detect resolution based on tag
+
+Credit
+------
 
 Based on the work of deoxxa (@deoxxa), github.com/deoxxa/node-nyaatorrents.
 
@@ -53,8 +60,6 @@ Todo
 ----
 
 * Support paging results (currently gets the first page, 100 results)
-* Detect and filter by sub group based on tag
-* Detect and filter by resolution based on tag
 * Update docs with new syntax and features
 
 License

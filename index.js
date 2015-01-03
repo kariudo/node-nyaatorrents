@@ -335,6 +335,11 @@ NyaaTorrents.prototype.search = function search(term, options, cb) {
 
       obj.HD = obj.resolution >= 720;
 
+      // try and get the release group
+      var reReleaseTag = /^\[(.+?)\]/;
+      var releaseTag = reReleaseTag.exec(nameStr);
+      obj.releaseTag = releaseTag ? releaseTag[1] : null;
+
       return obj;
     }).filter(function(e) {
       return e !== null;
