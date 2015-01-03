@@ -52,7 +52,7 @@ nt.search({term: "toradora"}, function(err, entries) {
 Todo
 ----
 
-* Support paging results
+* Support paging results (currently gets the first page, 100 results)
 * Detect and filter by sub group based on tag
 * Detect and filter by resolution based on tag
 * Update docs with new syntax and features
