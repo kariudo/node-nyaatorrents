@@ -240,21 +240,44 @@ NyaaTorrents.prototype.addComment = function addComment(id, content, cb) {
 // have provided no filter arguments. The second argument is a callback that
 // will be called on completion with `err` and `results` arguments. `err` will
 // be null in the case of success.
-NyaaTorrents.prototype.search = function search(query, cb) {
+//
+// Configuration options parameters can be passed into filter the search
+NyaaTorrents.prototype.search = function search(term, options, cb) {
   var uri = url.parse(this.baseUrl, true);
+  var config = options || {};
 
   if (typeof query === "function") {
-    cb = query;
-    query = null;
+    cb = term;
+    term = null;
   }
 
-  query = query || {};
+  if (typeof options === "function") {
+    cb = options;
+    options = {};
+  }
 
-  for (var k in query) {
-    uri.query[k] = query[k];
+  // Set up our options and filters for the search
+
+  switch(options.category) {
+    // TODO - add in other cat codes
+    case "enAnime":
+    default:
+      config.category = "1_37"; //english translated anime
+      break;
+  }
+
+  switch(options.filter) {
+    // TODO - add in other filter codes
+    case "trusted":
+    default:
+      config.filter = "2"; //trusted
+      break;
   }
 
   uri.query.page = "search";
+  uri.query.cats = config.category;
+  uri.query.filter = config.filter;
+  uri.query.term = term;
 
   request({uri: url.format(uri), jar: this.cookies}, function(err, res, data) {
     if (err) {

@@ -10,16 +10,20 @@ This is a light abstraction of the search and view functions of NyaaTorrents
 (nyaa.eu, formerly nyaatorrents.info and nyaatorrents.org). It can currently
 search the main site and the sukebei variant.
 
+Now supports simpler formatting.
+
+Based on the work of deoxxa (@deoxxa), github.com/deoxxa/node-nyaatorrents.
+
 Installation
 ------------
 
 Available via [npm](http://npmjs.org/):
 
-> $ npm install nyaatorrents
+> $ npm install git://github.com/kariudo/node-nyaatorrents.git
 
 Or via git:
 
-> $ git clone git://github.com/deoxxa/node-nyaatorrents.git node_modules/nyaatorrents
+> $ git clone git://github.com/kariudo/node-nyaatorrents.git node_modules/nyaatorrents
 
 Usage
 -----
@@ -28,7 +32,7 @@ Usage
 var NT = require("nyaatorrents"),
     nt = new NT("http://www.nyaa.eu");
 
-nt.search({term: "rozen maiden"}, function(err, entries) {
+nt.search({term: "toradora"}, function(err, entries) {
   if (err) {
     return console.warn(err);
   }
@@ -45,15 +49,25 @@ nt.search({term: "rozen maiden"}, function(err, entries) {
 });
 ```
 
+Todo
+----
+
+* Support paging results
+* Detect and filter by sub group based on tag
+* Detect and filter by resolution based on tag
+* Update docs with new syntax and features
+
 License
 -------
 
-3-clause BSD. A copy is included with the source.
+kariudo - MIT
+deoxxa - 3-clause BSD
+
+See source's LICENSE.md
 
 Contact
 -------
 
-* GitHub ([deoxxa](http://github.com/deoxxa))
-* Twitter ([@deoxxa](http://twitter.com/deoxxa))
-* ADN ([@deoxxa](https://alpha.app.net/deoxxa))
-* Email ([deoxxa@fknsrs.biz](mailto:deoxxa@fknsrs.biz))
+* GitHub ([kariudo](http://github.com/kariudo))
+* Twitter ([@kariudo](http://twitter.com/kariudo))
+* Email ([kariudo@gmail.com](mailto:kariudo@gmail.com))

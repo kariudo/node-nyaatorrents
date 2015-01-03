@@ -1,17 +1,17 @@
 {
   "name": "nyaatorrents",
   "description": "Interact with NyaaTorrents (nyaa.eu, formerly nyaatorrents.info)",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
-    "name": "Conrad Pankoff",
-    "email": "deoxxa@fknsrs.biz",
-    "url": "http://www.fknsrs.biz/"
+    "name": "Hunter Horsman",
+    "email": "kariudo@gmail.com",
+    "url": "http://kariudo.com/"
   },
-  "url": "http://github.com/deoxxa/node-nyaatorrents",
+  "url": "http://github.com/kariudo/node-nyaatorrents",
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "git://github.com/deoxxa/node-nyaatorrents.git"
+    "url": "git://github.com/kariudo/node-nyaatorrents.git"
   },
   "keywords": [
     "torrent",
